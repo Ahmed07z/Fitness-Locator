@@ -1,0 +1,44 @@
+{
+  "Product": [
+    {
+      "id": 1,
+      "name": "iPhone 12 Pro",
+      "desc": "Apple iPhone 12th generation",
+      "price": 1999,
+      "color": "#33505a",
+      "image": "assets/images/iphone.jpg"
+    },
+    {
+      "id": 2,
+      "name": "iPhone 4s Pro",
+      "desc": "Apple iPhone 4s generation",
+      "price": 2999,
+      "color": "#33505a",
+      "image": "assets/images/iphone.jpg"
+    },
+    {
+      "id": 3,
+      "name": "iPhone 8 Pro",
+      "desc": "Apple iPhone8 generation",
+      "price": 3999,
+      "color": "#33505a",
+      "image": "assets/images/iphone.jpg"
+    },
+    {
+      "id": 4,
+      "name": "iPhone 2 Pro",
+      "desc": "Apple iPhone8 generation",
+      "price": 500,
+      "color": "#33505a",
+      "image": "assets/images/iphone.jpg"
+    },
+    {
+      "id": 5,
+      "name": "iPhone 89 Pro",
+      "desc": "Apple iPhone8 generation",
+      "price": 1200,
+      "color": "#33505a",
+      "image": "assets/images/iphone.jpg"
+    }
+  ]
+}
