@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
     String names = "Ahmed";
     var today = "Friday";
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
           foregroundColor: Colors.black,
           title: Center(
