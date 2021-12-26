@@ -1,15 +1,7 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static List<Item> items = [
-    Item(
-        id: 1,
-        name: "iPhone 12 Pro",
-        desc: "Apple iPhone 12th generation",
-        price: 999,
-        color: "#33505a",
-        image: "assets/images/iphone.jpg")
-  ];
+  static List<Item> items = items;
 }
 
 class Item {
