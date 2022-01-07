@@ -27,7 +27,7 @@ class Mydrawer extends StatelessWidget {
                 padding: EdgeInsets.zero, child: userAccountsDrawerHeader),
             ListTile(
               leading: Icon(
-                CupertinoIcons.home,
+                Icons.home,
                 color: Colors.white,
               ),
               title: Text(
@@ -38,7 +38,7 @@ class Mydrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                CupertinoIcons.profile_circled,
+                Icons.person,
                 color: Colors.white,
               ),
               title: Text(
@@ -49,7 +49,7 @@ class Mydrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                CupertinoIcons.mail_solid,
+                Icons.mail,
                 color: Colors.white,
               ),
               title: Text(

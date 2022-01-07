@@ -1,7 +1,8 @@
-import 'package:f1/pages/Home_Page.dart';
+
+
+
+import 'package:get/get.dart';
 import 'package:f1/pages/login_page.dart';
-import 'package:f1/utils/routes.dart';
-import 'package:f1/utils/widged/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,17 +13,18 @@ void main() {
 class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       themeMode: ThemeMode.light,
-      theme: Mytheme.Lightthemes(context),
+
    
-      darkTheme: Mytheme.Darkthemes(context),
+
       debugShowCheckedModeBanner: false,
-      routes: {
-        "/": (context) => HomePage(),
-        // MyRoutes.homePage: (context) => HomePage(),
-       MyRoutes.loginRoute: (context) =>LoginPage(),
-      },
+      theme: ThemeData(
+        backgroundColor: Colors.black,
+      ),
+      
+    home: loginpage(),
+    
     );
   }
 }
