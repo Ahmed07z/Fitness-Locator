@@ -10,6 +10,7 @@ class UpdatePage extends StatefulWidget {
 class _UpdatePageState extends State<UpdatePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Text("This is upload page"));
   }
 }

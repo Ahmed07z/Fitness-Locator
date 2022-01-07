@@ -1,6 +1,7 @@
 
 
 
+import 'package:f1/pages/HomePage.dart';
 import 'package:get/get.dart';
 import 'package:f1/pages/login_page.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,12 @@ void main() {
   runApp(Myapp());
 }
 
-class Myapp extends StatelessWidget {
+class Myapp extends StatefulWidget {
+  @override
+  State<Myapp> createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -19,9 +25,7 @@ class Myapp extends StatelessWidget {
    
 
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        backgroundColor: Colors.black,
-      ),
+      
       
     home: loginpage(),
     

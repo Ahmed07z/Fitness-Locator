@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:f1/pages/HomePage.dart';
 import 'package:f1/pages/Login_Controller.dart';
 import 'package:get/get.dart';
 import 'package:f1/utils/routes.dart';
@@ -18,56 +19,24 @@ class _loginpageState extends State<loginpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar:
-            AppBar(title: Text("Login Page"), backgroundColor: Colors.blueGrey),
-        body: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [Colors.grey, Colors.black],
-          )),
-          child: Center(child: Obx(() {
-            if (controller.googleAccount.value == null) {
-              return buildloginbutoon();
-            } else {
-              return BuildProfileView();
-            }
-          })),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.black,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.blueGrey,
-          iconSize: 35,
-          selectedFontSize: 15,
-          showUnselectedLabels: false,
-          currentIndex: currentIndex,
-          onTap:(index) =>setState(()=> currentIndex =index),
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-               ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.notifications),
-                label: 'Notification',
-              ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Profile',
-           ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'Search',
-              ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.photo_camera),
-                label: 'Upload',
-             )
-          ],
-        ));
+      appBar:
+          AppBar(title: Text("Login Page"), backgroundColor: Colors.blueGrey),
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [Colors.grey, Colors.black],
+        )),
+        child: Center(child: Obx(() {
+          if (controller.googleAccount.value == null) {
+            return buildloginbutoon();
+          } else {
+            return BuildProfileView();
+          }
+        })),
+      ),
+    );
   }
 
   Column BuildProfileView() {
@@ -84,12 +53,36 @@ class _loginpageState extends State<loginpage> {
             style: TextStyle(color: Colors.white, fontSize: 35)),
         Text(controller.googleAccount.value?.email ?? '',
             style: TextStyle(color: Colors.white)),
-        ActionChip(
-          avatar: Icon(Icons.logout),
-          label: Text("Logout"),
-          onPressed: () {
-            controller.logout();
-          },
+        Container(margin: EdgeInsets.all(20),
+          child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.black,
+                  padding: EdgeInsets.all(10.0),
+                  
+                  textStyle: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  )),
+              onPressed: () {
+                Navigator?.push(
+                    context, MaterialPageRoute(builder: (context) => HomePage()));
+              },
+              
+              label:Text("Move To Home" ),
+              icon: Icon(Icons.arrow_forward),
+              ),
+        ),
+        Container(margin: EdgeInsets.all(20),
+          child: Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: ActionChip(
+              avatar: Icon(Icons.logout),
+              label: Text("Logout"),
+              onPressed: () {
+                controller.logout();
+              },
+            ),
+          ),
         ),
       ],
     );
