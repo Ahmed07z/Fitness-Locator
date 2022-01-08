@@ -1,3 +1,4 @@
+import 'package:f1/widgeds/AppBarWidged.dart';
 import 'package:flutter/material.dart';
 
 class UpdatePage extends StatefulWidget {
@@ -11,6 +12,7 @@ class _UpdatePageState extends State<UpdatePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(title: "UploadPage", backgroundColor: Colors.black),
       body: Text("This is upload page"));
   }
 }

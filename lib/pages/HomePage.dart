@@ -1,8 +1,10 @@
 import 'package:f1/pages/NotificationsPage.dart';
 import 'package:f1/pages/SearchPage.dart';
+import 'package:f1/pages/TimelinePage.dart';
 import 'package:f1/pages/UploadPage.dart';
 import 'package:f1/pages/login_page.dart';
 import 'package:f1/pages/profilePage.dart';
+import 'package:f1/widgeds/AppBarWidged.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,11 +17,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   final screens = [
-    loginpage(),
+ TimeLinePage(),
    NotificationsPage(),
    ProfilePage(),
-   UpdatePage(),
    SearchPage(),
+   UpdatePage(),
    
 
 
@@ -28,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
       
         body: screens[currentIndex],
         bottomNavigationBar: BottomNavigationBar(

@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:f1/pages/HomePage.dart';
 import 'package:f1/pages/Login_Controller.dart';
+import 'package:f1/widgeds/AppBarWidged.dart';
 import 'package:get/get.dart';
 import 'package:f1/utils/routes.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _loginpageState extends State<loginpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(title: Text("Login Page"), backgroundColor: Colors.blueGrey),
+        CustomAppBar(backgroundColor: Colors.red,title: "Login",),
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(

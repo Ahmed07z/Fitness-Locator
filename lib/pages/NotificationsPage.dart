@@ -1,3 +1,4 @@
+import 'package:f1/widgeds/AppBarWidged.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsPage extends StatefulWidget {
@@ -11,6 +12,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(title: "NOtifications", backgroundColor: Colors.blue),
       body: Text("This is notification page"),
     );
   }

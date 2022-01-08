@@ -1,3 +1,4 @@
+import 'package:f1/widgeds/AppBarWidged.dart';
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatefulWidget {
@@ -11,6 +12,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(title: "Search", backgroundColor: Colors.orange),
       body: Text("This is Search page"),
     );
   }
