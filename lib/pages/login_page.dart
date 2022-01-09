@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:f1/pages/HomePage.dart';
 import 'package:f1/pages/Login_Controller.dart';
 import 'package:f1/widgeds/AppBarWidged.dart';
@@ -6,6 +6,9 @@ import 'package:get/get.dart';
 import 'package:f1/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+final userReference = FirebaseFirestore.instance.collection("users");
+final GoogleSignIn gSignIn = GoogleSignIn();
 
 class loginpage extends StatefulWidget {
   @override
@@ -17,11 +20,22 @@ class _loginpageState extends State<loginpage> {
 
   int currentIndex = 0;
 
+  saveusertofirestore() {
+    userReference.doc(gSignIn.currentUser?.id).set({
+      "id": controller.googleAccount.value?.id,
+      "username": controller.googleAccount.value?.displayName,
+      "url": controller.googleAccount.value?.photoUrl,
+      "email": controller.googleAccount.value?.email,
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-        CustomAppBar(backgroundColor: Colors.red,title: "Login",),
+      appBar: CustomAppBar(
+        backgroundColor: Colors.red,
+        title: "Login",
+      ),
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -33,6 +47,7 @@ class _loginpageState extends State<loginpage> {
           if (controller.googleAccount.value == null) {
             return buildloginbutoon();
           } else {
+            saveusertofirestore();
             return BuildProfileView();
           }
         })),
@@ -54,26 +69,26 @@ class _loginpageState extends State<loginpage> {
             style: TextStyle(color: Colors.white, fontSize: 35)),
         Text(controller.googleAccount.value?.email ?? '',
             style: TextStyle(color: Colors.white)),
-        Container(margin: EdgeInsets.all(20),
+        Container(
+          margin: EdgeInsets.all(20),
           child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                  padding: EdgeInsets.all(10.0),
-                  
-                  textStyle: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  )),
-              onPressed: () {
-                Navigator?.push(
-                    context, MaterialPageRoute(builder: (context) => HomePage()));
-              },
-              
-              label:Text("Move To Home" ),
-              icon: Icon(Icons.arrow_forward),
-              ),
+            style: ElevatedButton.styleFrom(
+                primary: Colors.black,
+                padding: EdgeInsets.all(10.0),
+                textStyle: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                )),
+            onPressed: () {
+              Navigator?.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+            label: Text("Move To Home"),
+            icon: Icon(Icons.arrow_forward),
+          ),
         ),
-        Container(margin: EdgeInsets.all(20),
+        Container(
+          margin: EdgeInsets.all(20),
           child: Padding(
             padding: const EdgeInsets.all(40.0),
             child: ActionChip(
