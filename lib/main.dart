@@ -21,7 +21,7 @@ class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       home: loginpage(),
     );
