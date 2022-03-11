@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:f1/pages/FtinessRegisteration.dart';
 import 'package:f1/pages/HomePage.dart';
 import 'package:f1/pages/Login_Controller.dart';
 import 'package:f1/widgeds/AppBarWidged.dart';
@@ -20,13 +21,18 @@ class _loginpageState extends State<loginpage> {
 
   int currentIndex = 0;
 
-  saveusertofirestore() {
-    userReference.doc(gSignIn.currentUser?.id).set({
+  saveusertofirestore() async {
+    DocumentSnapshot documentSnapshot =
+        await userReference.doc(controller.googleAccount.value?.id).get();
+
+    if (!documentSnapshot.exists) {
+      userReference.doc(controller.googleAccount.value?.id).set({
       "id": controller.googleAccount.value?.id,
       "username": controller.googleAccount.value?.displayName,
       "url": controller.googleAccount.value?.photoUrl,
       "email": controller.googleAccount.value?.email,
     });
+    }
   }
 
   @override
@@ -81,7 +87,9 @@ class _loginpageState extends State<loginpage> {
                 )),
             onPressed: () {
               Navigator?.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => FitnessRegisteration()));
             },
             label: Text("Move To Home"),
             icon: Icon(Icons.arrow_forward),
