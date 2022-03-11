@@ -12,8 +12,8 @@ class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:  Container(
-          decoration: BoxDecoration(
+        body: Container(
+      decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/adminlogin.png"),
           fit: BoxFit.cover,
@@ -21,8 +21,31 @@ class _StartScreenState extends State<StartScreen> {
       ),
       child: Column(
         children: [
+          //    Padding(
+          //   padding: const EdgeInsets.only(top: 60,bottom: 0),
+          //   child: Image.asset(
+          //           "assets/images/hey.jpg",
+          //           fit: BoxFit.fitHeight,
+          //           height: 150.0,
+
+          //         ),
+          // ),
           Padding(
-              padding: const EdgeInsets.only(top: 400.0, right: 20, left: 20),
+            padding: const EdgeInsets.only(top: 140.0, bottom: 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Select the User Type',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 35.0,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold))
+              ],
+            ),
+          ),
+          Padding(
+              padding: const EdgeInsets.only(top: 150.0, right: 20, left: 20),
               child: Container(
                 child: Material(
                   color: Colors.white54,
