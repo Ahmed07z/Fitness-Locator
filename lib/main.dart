@@ -1,5 +1,6 @@
 import 'package:f1/pages/AdminLogin.dart';
 import 'package:f1/pages/HomePage.dart';
+import 'package:f1/pages/StartAppScreen.dart';
 import 'package:f1/widgeds/AppBarWidged.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
@@ -24,7 +25,7 @@ class _MyappState extends State<Myapp> {
     return GetMaterialApp(
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home: AdminLogin(),
+      home: StartScreen(),
     );
   }
 }
