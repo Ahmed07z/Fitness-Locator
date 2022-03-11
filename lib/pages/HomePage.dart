@@ -1,6 +1,7 @@
+import 'package:f1/pages/FtinessRegisteration.dart';
 import 'package:f1/pages/NotificationsPage.dart';
 import 'package:f1/pages/SearchPage.dart';
-import 'package:f1/pages/TimelinePage.dart';
+
 import 'package:f1/pages/UploadPage.dart';
 import 'package:f1/pages/login_page.dart';
 import 'package:f1/pages/profilePage.dart';
@@ -17,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   final screens = [
- TimeLinePage(),
+    FitnessRegisteration(),
    NotificationsPage(),
    ProfilePage(),
    SearchPage(),

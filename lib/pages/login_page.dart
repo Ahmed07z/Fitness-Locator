@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 final userReference = FirebaseFirestore.instance.collection("users");
+final ownerReference = FirebaseFirestore.instance.collection("owners");
 final GoogleSignIn gSignIn = GoogleSignIn();
 
 class loginpage extends StatefulWidget {
@@ -27,11 +28,11 @@ class _loginpageState extends State<loginpage> {
 
     if (!documentSnapshot.exists) {
       userReference.doc(controller.googleAccount.value?.id).set({
-      "id": controller.googleAccount.value?.id,
-      "username": controller.googleAccount.value?.displayName,
-      "url": controller.googleAccount.value?.photoUrl,
-      "email": controller.googleAccount.value?.email,
-    });
+        "id": controller.googleAccount.value?.id,
+        "username": controller.googleAccount.value?.displayName,
+        "url": controller.googleAccount.value?.photoUrl,
+        "email": controller.googleAccount.value?.email,
+      });
     }
   }
 
@@ -89,7 +90,7 @@ class _loginpageState extends State<loginpage> {
               Navigator?.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => FitnessRegisteration()));
+                      builder: (context) => HomePage()));
             },
             label: Text("Move To Home"),
             icon: Icon(Icons.arrow_forward),
