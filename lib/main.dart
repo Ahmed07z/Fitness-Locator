@@ -1,3 +1,4 @@
+import 'package:f1/animatedsplash/splashscreen.dart';
 import 'package:f1/pages/AdminLogin.dart';
 import 'package:f1/pages/HomePage.dart';
 import 'package:f1/pages/StartAppScreen.dart';
@@ -7,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:f1/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +27,7 @@ class _MyappState extends State<Myapp> {
     return GetMaterialApp(
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home: StartScreen(),
+      home: SplashScreen(),
     );
   }
 }
