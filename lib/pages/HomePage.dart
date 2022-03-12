@@ -1,5 +1,5 @@
-import 'package:f1/pages/FtinessRegisteration.dart';
-import 'package:f1/pages/NotificationsPage.dart';
+import 'package:f1/pages/FitnessRegisteration.dart';
+
 import 'package:f1/pages/SearchPage.dart';
 
 import 'package:f1/pages/UploadPage.dart';
@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   final screens = [
     FitnessRegisteration(),
-   NotificationsPage(),
+ 
    ProfilePage(),
    SearchPage(),
    UpdatePage(),

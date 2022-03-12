@@ -1,3 +1,5 @@
+import 'package:f1/pages/HomePage.dart';
+import 'package:f1/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatefulWidget {
@@ -58,7 +60,12 @@ class _StartScreenState extends State<StartScreen> {
                       width: changebutton ? 50 : 490,
                       alignment: Alignment.center,
                       child: InkWell(
-                        onTap: () => {},
+                        onTap: ()  {
+                          Navigator?.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => loginpage()));
+                        },
                         child: changebutton
                             ? Icon(
                                 Icons.done,
@@ -68,7 +75,7 @@ class _StartScreenState extends State<StartScreen> {
                                 "Customer",
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 20,
+                                  fontSize: 30,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -103,7 +110,7 @@ class _StartScreenState extends State<StartScreen> {
                             "Fitness Owner",
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: 30,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

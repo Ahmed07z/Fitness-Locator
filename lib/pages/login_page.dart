@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:f1/pages/FtinessRegisteration.dart';
+import 'package:f1/pages/FitnessRegisteration.dart';
 import 'package:f1/pages/HomePage.dart';
 import 'package:f1/pages/Login_Controller.dart';
 import 'package:f1/widgeds/AppBarWidged.dart';
