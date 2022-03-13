@@ -1,5 +1,6 @@
 import 'package:f1/animatedsplash/splashscreen.dart';
 import 'package:f1/pages/AdminLogin.dart';
+import 'package:f1/pages/FitnessRegisteration.dart';
 import 'package:f1/pages/HomePage.dart';
 import 'package:f1/pages/StartAppScreen.dart';
 import 'package:f1/widgeds/AppBarWidged.dart';
@@ -27,7 +28,7 @@ class _MyappState extends State<Myapp> {
     return GetMaterialApp(
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: FitnessRegisteration(),
     );
   }
 }

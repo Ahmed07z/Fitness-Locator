@@ -11,6 +11,7 @@ class StartScreen extends StatefulWidget {
 
 class _StartScreenState extends State<StartScreen> {
   bool changebutton = false;
+  String UserSelected = "usertype";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,11 +61,12 @@ class _StartScreenState extends State<StartScreen> {
                       width: changebutton ? 50 : 490,
                       alignment: Alignment.center,
                       child: InkWell(
-                        onTap: ()  {
+                        onTap: () {
                           Navigator?.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => loginpage()));
+                          UserSelected = "customer";
                         },
                         child: changebutton
                             ? Icon(
@@ -100,7 +102,12 @@ class _StartScreenState extends State<StartScreen> {
                   width: changebutton ? 50 : 490,
                   alignment: Alignment.center,
                   child: InkWell(
-                    onTap: () => {},
+                    onTap: () {
+                       Navigator?.push(context,
+                          MaterialPageRoute(builder: (context) => loginpage()));
+                      UserSelected = "owner";
+                      
+                    },
                     child: changebutton
                         ? Icon(
                             Icons.done,

@@ -18,7 +18,17 @@ class _FitnessRegisterationState extends State<FitnessRegisteration> {
 
   Widget? _buildNameField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: 'Name:',),
+      decoration: InputDecoration(labelText: 'Name:',
+      filled: true,
+          fillColor: Colors.white,
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+              ),
+              borderRadius: BorderRadius.circular(8.0)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+              borderRadius: BorderRadius.circular(2.0))),
       validator: (String? value){
         if(value!.isEmpty){
           return 'Name is required';
@@ -32,8 +42,18 @@ class _FitnessRegisterationState extends State<FitnessRegisteration> {
   }
 
   Widget? _buildCenterNameField() {
-     return TextFormField(
-      decoration: InputDecoration(labelText: 'Fitness Center Name:',),
+     return TextFormField( 
+      decoration: InputDecoration(labelText: 'Fitness Center Name:',
+      filled: true,
+          fillColor: Colors.white,
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+              ),
+              borderRadius: BorderRadius.circular(8.0)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+              borderRadius: BorderRadius.circular(2.0))),
       validator: (String? value){
         if(value!.isEmpty){
           return ' Center Name is required';
@@ -48,7 +68,17 @@ class _FitnessRegisterationState extends State<FitnessRegisteration> {
 
   Widget? _buildemailField() {
  return TextFormField(
-      decoration: InputDecoration(labelText: 'Email'),
+      decoration: InputDecoration(labelText: 'Email',
+       filled: true,
+          fillColor: Colors.white,
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+              ),
+              borderRadius: BorderRadius.circular(8.0)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+              borderRadius: BorderRadius.circular(2.0))),
       validator: (String? value) {
         if (value!.isEmpty) {
           return 'Email is Required';
@@ -70,7 +100,15 @@ class _FitnessRegisterationState extends State<FitnessRegisteration> {
 
   Widget? _buildphonenoField() {
    return TextFormField(
-      decoration: InputDecoration(labelText: 'Phone number:',),
+      decoration: InputDecoration(labelText: 'Phone number:',
+       filled: true,
+          fillColor: Colors.white,
+       enabledBorder:
+              OutlineInputBorder(borderSide: BorderSide(color: Colors.white,
+              ),borderRadius: BorderRadius.circular(8.0)),
+          focusedBorder:
+              OutlineInputBorder(borderSide: BorderSide(color: Colors.white),borderRadius: BorderRadius.circular(2.0))
+              ),
       validator: (String? value){
         if(value!.isEmpty){
           return ' Phoneno is required';
@@ -85,7 +123,17 @@ class _FitnessRegisterationState extends State<FitnessRegisteration> {
 
   Widget? _buildtimingsField() {
   return TextFormField(
-      decoration: InputDecoration(labelText: 'Timings:',),
+      decoration: InputDecoration(labelText: 'Timings:',
+        filled: true,
+          fillColor: Colors.white,
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+              ),
+              borderRadius: BorderRadius.circular(8.0)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+              borderRadius: BorderRadius.circular(2.0))),
       validator: (String? value){
         if(value!.isEmpty){
           return ' Center Timing is required';
@@ -100,56 +148,95 @@ class _FitnessRegisterationState extends State<FitnessRegisteration> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Fitness Center Registeration")),
-      body:SingleChildScrollView(
-       
-        child: Form(
-          key:_formkey,
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(3.0),
-              child: _buildNameField(),
+    return Scaffold(backgroundColor: 
+    Colors.black,
+    
+    
+      // appBar: AppBar(title: Text("Fitness Center Registeration"),backgroundColor: Colors.black,),
+      body:
+      Padding(
+        padding: const EdgeInsets.only(top:0,right: 7.0,left: 7.0,bottom: 20),
+        child: SingleChildScrollView(
+          
+         
+          child: Form(
+            key:_formkey,
+              child: Container( height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/adminlogin.png"),
+              fit: BoxFit.cover,
             ),
-            Padding(
-              padding: const EdgeInsets.all(3.0),
-              child: _buildCenterNameField(),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(3.0),
-              child: _buildemailField(),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(3.0),
-              child: _buildphonenoField(),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(3.0),
-              child: _buildtimingsField(),
-            ),
-            SizedBox(
-              height: 100,
-            ),
-            ElevatedButton(
-              child: Text(
-                'Save',
-                style: TextStyle(color: Colors.white, fontSize: 16),
+          ),
+                child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            
+            children: <Widget>[
+              Row( 
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [
+                 Text(
+                          'Register Your Center',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30,
+                              color: Colors.white),
+                        ),
+              ],
+
               ),
-              onPressed: (){
-                if(!_formkey.currentState!.validate()){
-                return;
-                };
-                _formkey.currentState!.save();
-                print(ownerName);
-                // print(fitnessCenterName);
-                // print(email);
-                // print(phoneno);
-              },
-            )
-          ],
-        )),
+                Padding(
+                  padding: const EdgeInsets.only(top:25,left: 12,right: 12,bottom: 12),
+                  child: _buildNameField(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: _buildCenterNameField(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: _buildemailField(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: _buildphonenoField(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: _buildtimingsField(),
+                ),
+                SizedBox(
+                  height: 30,
+                  
+                ),
+                ElevatedButton(
+                  child: Text(
+                    'Save',
+                    style: TextStyle(color: Colors.black, fontSize: 20,fontWeight: FontWeight.bold),
+                    
+                    
+                    
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.red[400]),
+                    padding: MaterialStateProperty.all(EdgeInsets.only(right:
+                      50.0,left: 50.0,top: 10,bottom: 10
+                    ))
+                  ),
+                  onPressed: (){
+                    if(!_formkey.currentState!.validate()){
+                    return;
+                    };
+                    _formkey.currentState!.save();
+                    print(ownerName);
+                    // print(fitnessCenterName);
+                    // print(email);
+                    // print(phoneno);
+                  },
+                )
+            ],
+          ),
+              )),
+        ),
       ),
     );
   }
