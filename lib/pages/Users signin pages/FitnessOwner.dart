@@ -11,28 +11,29 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:f1/pages/startappscreen.dart';
 
-final userReference = FirebaseFirestore.instance.collection("users");
 
+final ownerReference = FirebaseFirestore.instance.collection("owners");
 final GoogleSignIn gSignIn = GoogleSignIn();
 
-class loginpage extends StatefulWidget {
+class FitnessOwnerLogin extends StatefulWidget {
+  FitnessOwnerLogin({Key? key}) : super(key: key);
+
   @override
-  State<loginpage> createState() => _loginpageState();
+  State<FitnessOwnerLogin> createState() => _FitnessOwnerLoginState();
 }
 
-class _loginpageState extends State<loginpage> {
+class _FitnessOwnerLoginState extends State<FitnessOwnerLogin> {
   final controller = Get.put(LoginController());
   late String UserSelected;
-  
 
   int currentIndex = 0;
 
   saveusertofirestore() async {
     DocumentSnapshot documentSnapshot =
-        await userReference.doc(controller.googleAccount.value?.id).get();
+        await ownerReference.doc(controller.googleAccount.value?.id).get();
 
     if (!documentSnapshot.exists) {
-      userReference.doc(controller.googleAccount.value?.id).set({
+      ownerReference.doc(controller.googleAccount.value?.id).set({
         "id": controller.googleAccount.value?.id,
         "username": controller.googleAccount.value?.displayName,
         "url": controller.googleAccount.value?.photoUrl,
@@ -46,7 +47,7 @@ class _loginpageState extends State<loginpage> {
     return Scaffold(
       appBar: CustomAppBar(
         backgroundColor: Colors.red,
-        title: "Customer Login",
+        title: "Fitness Owners Login",
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -77,6 +78,7 @@ class _loginpageState extends State<loginpage> {
                   .image,
           radius: 100,
         ),
+        Text('Welcome', style: TextStyle(color: Colors.white, fontSize: 35)),
         Text(controller.googleAccount.value?.displayName ?? '',
             style: TextStyle(color: Colors.white, fontSize: 35)),
         Text(controller.googleAccount.value?.email ?? '',
@@ -93,7 +95,7 @@ class _loginpageState extends State<loginpage> {
                 )),
             onPressed: () {
               Navigator?.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
+                  context, MaterialPageRoute(builder: (context) => FitnessRegisteration()));
             },
             label: Text("Move To Home"),
             icon: Icon(Icons.arrow_forward),

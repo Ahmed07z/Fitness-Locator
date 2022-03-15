@@ -1,8 +1,6 @@
 import 'package:f1/pages/FitnessRegisteration.dart';
-
+import 'package:f1/pages/PromotionScreen.dart';
 import 'package:f1/pages/SearchPage.dart';
-
-import 'package:f1/pages/UploadPage.dart';
 import 'package:f1/pages/login_page.dart';
 import 'package:f1/pages/profilePage.dart';
 import 'package:f1/widgeds/AppBarWidged.dart';
@@ -18,21 +16,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   final screens = [
-    FitnessRegisteration(),
- 
-   ProfilePage(),
-   SearchPage(),
-   UpdatePage(),
-   
-
-
-
+    SearchPage(),
+    PromotionScreen(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    
-      
         body: screens[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -49,21 +38,21 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.home),
               label: 'Home',
             ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.notifications),
+            //   label: 'Notification',
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.person),
+            //   label: 'Profile',
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.search),
+            //   label: 'Search',
+            // ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: 'Notification',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.photo_camera),
-              label: 'Upload',
+              icon: Icon(Icons.image_sharp),
+              label: 'Promotions',
             )
           ],
         ));
