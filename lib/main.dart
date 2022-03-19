@@ -4,6 +4,7 @@ import 'package:f1/pages/FitnessRegisteration.dart';
 import 'package:f1/pages/HomePage.dart';
 import 'package:f1/pages/PromotionScreen.dart';
 import 'package:f1/pages/StartAppScreen.dart';
+import 'package:f1/pages/promotionUploader.dart';
 import 'package:f1/pages/startappscreen.dart';
 import 'package:f1/widgeds/AppBarWidged.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,7 +31,7 @@ class _MyappState extends State<Myapp> {
     return GetMaterialApp(
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home:SplashScreen
+      home:PromotionUploader
       (),
     );
   }
