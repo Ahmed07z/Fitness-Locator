@@ -12,7 +12,10 @@ import 'package:get/get.dart';
 import 'package:f1/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'dart:io';
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/services.dart';
+import 'package:path/path.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +34,7 @@ class _MyappState extends State<Myapp> {
     return GetMaterialApp(
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home:PromotionUploader
+      home:SplashScreen
       (),
     );
   }

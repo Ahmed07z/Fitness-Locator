@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'dart:io';
+import 'package:file_picker/file_picker.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:path/path.dart';
 
 class PromotionUploader extends StatefulWidget {
   PromotionUploader({Key? key}) : super(key: key);
@@ -36,7 +41,12 @@ class _PromotionUploaderState extends State<PromotionUploader> {
                 
               ),
               ElevatedButton(onPressed: ()=>{}, 
-              child: Text('Upload Image'))
+              child: Text('Select Image')),
+            SizedBox(
+              height: 100,
+            ),
+            ElevatedButton(onPressed: () => {},
+             child: Text('Upload Image'))
             ]
           ),
         ),
